@@ -1,5 +1,9 @@
 use std::collections::HashMap;
 
+/*
+get the number of subarrays with hashmap
+do not override the value of the hashmap
+ */
 pub struct Solution;
 
 impl Solution{
