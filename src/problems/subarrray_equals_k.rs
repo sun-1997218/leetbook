@@ -10,12 +10,12 @@ impl Solution{
         hash.insert(0,1);
         for i in 0..vec.len(){
             sum+=vec[i];
-            hash.insert(sum,i);
-            if(hash.get(&(sum-k)).is_some()){
-                result+=1;
+            if let Some(count) = hash.get(&(sum-k)){
+                result+=count;
             }
+            *hash.entry(sum).or_insert(0)+=1;
         }
-        result
+        result as i32
     }
 }
 
@@ -41,10 +41,10 @@ mod tests {
 
     #[test]
     fn test_find_subarray_no_match() {
-        let vec = vec![1, 2, 3];
-        let k = 7;
+        let vec = vec![0,0,0];
+        let k = 0;
         let result = Solution::find_subarray(vec, k);
-        assert_eq!(result, 0);
+        assert_eq!(result, 6);
     }
 
     #[test]
