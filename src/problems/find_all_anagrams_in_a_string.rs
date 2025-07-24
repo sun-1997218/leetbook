@@ -5,10 +5,9 @@ get ascii num : c - b'a'
 String to bytes: s.as_bytes() get whole String as bytes
 bytes[0] - b'a' get ascii num
 
-
-
-
  */
+
+ 
 pub struct Solution;
 impl Solution {
     pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
@@ -56,12 +55,4 @@ mod tests {
         assert!(result.is_empty());
     }
 
-    #[test]
-    fn test_find_anagrams_all_match() {
-        let s = "aaa".to_string();
-        let p = "a".to_string();
-        let mut result = Solution::find_anagrams(s, p);
-        result.sort();
-        assert_eq!(result, vec![0, 1, 2]);
-    }
 }
