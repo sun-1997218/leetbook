@@ -4,3 +4,4 @@ pub mod subarrray_equals_k;
 pub mod silder_window_maximum;
 pub mod maxmium_subarray;
 pub mod merge_intervals;
+pub mod rotate_string;
