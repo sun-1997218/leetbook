@@ -1,19 +1,24 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn solve(nums: Vec<i32>) -> Vec<i32>{
-        let mut left = Vec::with_capacity(nums.len() as usize,1);
-        let mut right = Vec::with_capacity(nums.len() as usize,1);
-        let len = nums.len();
-        for i in 0..len{
-            if(i==0){
-                left[i] == nums[i];
-                right[len-i] = nums[len-i];
-            }
-            else {
-                
-            }
-        }
+    pub fn solve(nums: Vec<i32>) -> Vec<i32> {
+        let n = nums.len();
+        let mut left = vec![1; n];
+        let mut right = vec![1; n];
+        let mut ans = vec![1; n];
 
+        // 计算左侧乘积
+        for i in 1..n {
+            left[i] = left[i-1] * nums[i-1];
+        }
+        // 计算右侧乘积
+        for i in (0..n-1).rev() {
+            right[i] = right[i+1] * nums[i+1];
+        }
+        // 结果
+        for i in 0..n {
+            ans[i] = left[i] * right[i];
+        }
+        ans
     }
 }

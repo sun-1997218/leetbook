@@ -5,3 +5,4 @@ pub mod silder_window_maximum;
 pub mod maxmium_subarray;
 pub mod merge_intervals;
 pub mod rotate_string;
+pub mod product_of_array_except_itself;
