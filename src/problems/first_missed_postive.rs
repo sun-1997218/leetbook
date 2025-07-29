@@ -9,7 +9,6 @@ impl Solution {
                 nums.swap(i, j);
             }
         }
-
       
         for i in 0..n {
             if nums[i] != (i + 1) as i32 {
