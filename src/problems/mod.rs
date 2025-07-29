@@ -7,3 +7,4 @@ pub mod merge_intervals;
 pub mod rotate_string;
 pub mod product_of_array_except_itself;
 pub mod set_matrix_zeros;
+pub mod rotate_matrix;
