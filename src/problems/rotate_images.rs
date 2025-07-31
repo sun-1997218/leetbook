@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution{
-    pub fn solve(&mut matrix : Vec<Vec<i32>>){
+    pub fn solve(matrix :&mut  Vec<Vec<i32>>){
         let n = matrix.len();
         for i in 0..n {
             for j in 0..i {
