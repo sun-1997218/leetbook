@@ -10,8 +10,6 @@ impl Solution{
                 matrix[j][i] = tmp;
             }
         }
-
-
         for row in matrix {
             row.reverse();
         }
