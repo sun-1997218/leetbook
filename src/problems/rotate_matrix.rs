@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution{
    
         pub fn spiral_order(mut matrix: Vec<Vec<i32>>) -> Vec<i32> {
-            const DIRS: [(i32, i32); 4] = [(0, 1), (1, 0), (0, -1), (-1, 0)]; // 右下左上
+            const DIRS: [(i32, i32); 4] = [(0, 1), (1, 0), (0, -1), (-1, 0)]; 
             let mut m = matrix.len();
             let mut n = matrix[0].len();
             let size = m * n;
