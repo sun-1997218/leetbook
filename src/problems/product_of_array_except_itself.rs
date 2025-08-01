@@ -12,7 +12,7 @@ impl Solution {
             left[i] = left[i-1] * nums[i-1];
         }
         // 计算右侧乘积
-        for i in rev() {
+        for i in (0..n-1).rev() {
             right[i] = right[i+1] * nums[i+1];
         }
         // 结果
