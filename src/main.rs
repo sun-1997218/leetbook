@@ -18,10 +18,6 @@ fn main() {
     let result = Solution::solve(Some(root));
     println!("递归方法: {:?}", result);
     
-    let root2 = create_sample_tree();
-    let result2 = Solution::solve_iterative(Some(root2));
-    println!("迭代方法: {:?}", result2);
-    
     // 演示为什么需要复杂的类型
     demonstrate_ownership_issues();
 }

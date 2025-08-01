@@ -21,15 +21,18 @@ impl TreeNode {
 pub struct Solution;
 
 impl Solution {
-  pub fn solve (root:Option<Rc<RefCell<TreeNode>>>) ->Vec<i32>{
-      let ans:Vec<i32> = Vec::new();
-       
-       while(root){
-        if(root)
-       }
-
-
+  pub fn solve(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    let mut ans: Vec<i32> = Vec::new();
+    Self::in_order(root, &mut ans);
     ans
+  }
 
+  fn in_order(root: Option<Rc<RefCell<TreeNode>>>, ans: &mut Vec<i32>) {
+    if root.is_some(){
+      let node = root.unwrap();
+      Self::in_order(node.borrow().left.clone(), ans);
+      ans.push(node.borrow().val);
+      Self::in_order(node.borrow().right.clone(), ans);
+    }
   }
 }
