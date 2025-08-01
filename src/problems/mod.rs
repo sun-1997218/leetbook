@@ -10,3 +10,4 @@ pub mod set_matrix_zeros;
 pub mod rotate_matrix;
 pub mod rotate_images;
 pub mod search_matrix;
+pub mod binanry_tree_inorder;
