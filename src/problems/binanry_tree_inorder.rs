@@ -20,6 +20,7 @@ impl TreeNode {
 
 pub struct Solution;
 
+//tag: binary_tree Option<Rc<RefCell<TreeNode>>>
 impl Solution {
   pub fn solve(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut ans: Vec<i32> = Vec::new();
