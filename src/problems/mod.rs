@@ -11,3 +11,4 @@ pub mod rotate_matrix;
 pub mod rotate_images;
 pub mod search_matrix;
 pub mod binanry_tree_inorder;
+pub mod max_depth_of_binary_tree;

@@ -35,5 +35,6 @@ impl Solution {
       ans.push(node.borrow().val);
       Self::in_order(node.borrow().right.clone(), ans);
     }
+    ans
   }
 }
