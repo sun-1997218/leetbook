@@ -17,11 +17,11 @@ pub struct  Solution;
 impl Solution {
     pub fn solve (root: Option<Rc<RefCell<TreeNode>>>)->Option<Rc<RefCell<TreeNode>>>{
         if let Some(node) = root.clone() {
-            // 先递归处理左右子树
+            
             let left = Self::solve(node.borrow_mut().left.clone());
             let right = Self::solve(node.borrow_mut().right.clone());
             
-            // 交换左右子节点
+           
             node.borrow_mut().left = right;
             node.borrow_mut().right = left;
         }
