@@ -1,9 +1,9 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 pub struct TreeNode{
-    pub val:i32,
-    pub left:Option<Rc<RefCell<TreeNode>>>,
-    pub right:Option<Rc<RefCell<TreeNode>>>
+    val:i32,
+    left:Option<Rc<RefCell<TreeNode>>>,
+    right:Option<Rc<RefCell<TreeNode>>>
 }
 
 impl TreeNode {
@@ -20,17 +20,24 @@ impl TreeNode {
   pub struct  Solution ;
   impl Solution {
     pub fn solve (root:Option<Rc<RefCell<TreeNode>>>) -> i32{
-        Self::max_depth(root)
+        let result = self.mathod(root,0);
+
+        result
     }
 
-    fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        match root {
-            Some(node) => {
-                let left_depth = Self::max_depth(node.borrow().left.clone());
-                let right_depth = Self::max_depth(node.borrow().right.clone());
-                1 + std::cmp::max(left_depth, right_depth)
-            },
-            None => 0
+    pub fn mathod (root:Option<Rc<RefCell<TreeNode>>>,val:i32) ->i32{
+
+        if root.is_some() {
+            
+            if let Some(left) = root.left{
+                let left_val = self.mathod(left,val+1);
+                let right_val = self.mathod(root.right,val+1);
+                return left_val.max(right_val);
+            }
         }
+
+        val
     }
+
+
   }
